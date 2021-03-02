@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #f3f3f3;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.contenedor{
+    width:90%;
+    /* max-width: 800px; */
+    max-width: 1200px;
+    margin: auto;
+}
+
+/*Header*/
+header{
+    padding: 40px 0;
+}
+
+.logo h1{
+    font-weight: 1300;
+    font-size: 2rem;
+}
+
+.logo p{
+    color: #9b9b9b;
+    font-weight: 400;
+}
+
+header .logo{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header .barra-busqueda{
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
+    background-color: white;
+    padding: 0 20px;
+    border-radius: 100px;
+    border: none;
+    text-align: center;
+    font-size: 1rem;
+    outline: none;
+}
+
+form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+header .categorias{
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap; /*Esto me genera que si el conedor sus elementos no alcanza. estos se pondran en la parte de abajo*/
+
+}
+
+header .categorias a{
+    color:#9b9b9b;
+    margin:10px 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+header .categorias a.activo{
+    color: black;
+}
+
+/*Grid*/
+
+.grid{
+    position: relative;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.5s linear 1s;
+}
+
+.grid.imagenes-cargadas{
+    opacity: 1;
+}
+
+.grid .item{
+    transition: opacity 0.5s linear 1s;
+    position: absolute;
+    display: block;
+    padding: 0px;
+    margin: 10px;
+    /* width: calc(33.3333333% - 20px); NOsotros con la funcion calc. queremos quitar esos 20px del 33% del ancho que deseamos */
+    width: calc(25% - 20px); /*NOsotros con la funcion calc. queremos quitar esos 20px del 33% del ancho que deseamos*/
+}
+
+.grid .item-contenido {
+    position: relative;
+}
+
+.grid .item img{
+    width: 100%;
+    border-radius: 10px;
+    /*
+    cursor: pointer;
+    vertical-align: top;
+    */
+}
+
+
+/*overlay*/
+
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.9);
+    width: 100%;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlay.activo{
+    display: flex;
+}
+
+.contenedor-img{
+    display: flex;
+    /* border: 1px solid blue; */
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.contenedor-img img{
+    max-width: 30%;
+    border-radius: 20px;
+    /* border: 1px solid red; */
+}
+
+.overlay .descripcion{
+    display: block;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 10px;
+    max-width: 30%;
+}
+
+.overlay #btn-cerrar-popup{
+    font-size: 16px;
+    background: none;
+    position: absolute;
+    z-index: 1;
+    right: 34%;
+    top: -20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+/*Pie de pagina*/
+/*
+.footer{
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    z-index: 2;
+}
+*/
+.footer h1{
+    text-align: center;
+    padding: 50px 0px;
+}
+
+
+/*prueba*/
+
+header{
+    margin: auto;
+    max-width: 1200px;
+    /*
+    position: fixed;
+    z-index: 10;
+    background-color: #f3f3f3;
+    */
+}
+
+
+
+/*Media query*/
+@media (max-width: 700px){
+    .grid .item{
+        width: calc(50% - 20px);
+    }
+
+    header .barra-busqueda{
+        width: 100%;
+    }
+}
